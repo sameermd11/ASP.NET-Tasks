@@ -1,0 +1,29 @@
+﻿@using WebApplication4
+@model Employee
+<h4>Enter the following details</h4>
+<hr/>
+<form action="/Employee/Create" method="post">
+    <label>Employee No : </label>
+    <input name="EmpNo" type="text" />
+    <br/>
+    <label>Employee Name : </label>
+    <input name="Ename" type="text" />
+    <br/>
+    <label>Employee Job : </label>
+    <input name="Job" type="text" />
+    <br/>
+    <label>Employee Salary : </label>
+    <input name="Salary" type="text" />
+    <br/>
+    <label>Employee Dept No : </label>
+    <input name="DeptNo" type="text" />
+    <br/>
+    <input type="submit" value="Create" />
+</form>
+
+@{
+    if (ViewBag.RequestType == "POST")
+    {
+        <h4>@ViewBag.ErrorMessage</h4>
+    }
+}

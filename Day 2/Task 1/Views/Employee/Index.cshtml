@@ -1,0 +1,36 @@
+﻿@using WebApplication4.Models 
+@model List<Employee>
+
+<style>
+    table, th, td {border: 1px solid black;}
+</style>
+<h4>Index Page -- Employee Details</h4>
+<hr/>
+
+<a href="/Employee/Create">Add New Employee</a>
+
+<table width="600">
+    <tr>
+        <th>EmpNo</th>
+        <th>EName</th>
+        <th>Job</th>
+        <th>Salary</th>
+        <th>DeptNo</th>
+    </tr>
+    @foreach(Employee item in Model)
+    {
+        <tr>
+            <td>@item.EmpNo</td>
+            <td>@item.Ename</td>
+            <td>@item.Job</td>
+            <td>@item.Salary</td>
+            <td>@item.DeptNo</td>
+            <td>
+                <a href="/Employee/Details/@item.EmpNo">Details</a> |
+                <a href="/Employee/Edit/@item.EmpNo">Edit</a> |
+                <a href="/Employee/Delete/@item.EmpNo">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

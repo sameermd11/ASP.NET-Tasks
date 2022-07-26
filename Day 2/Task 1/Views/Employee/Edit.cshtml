@@ -1,0 +1,30 @@
+﻿@using WebApplication4.Models
+@model Employee
+
+<h4>Edit Employee Details</h4>
+
+<form action="/Employee/Edit" method="post">    
+    <label>Employee No :</label>
+    <input name="EmpNo" type="text" value="@Model.EmpNo" readonly />
+    <hr/>
+    <label>Employee Name :</label>
+    <input name="Ename" type="text" value="@Model.Ename"/>
+    <hr/>
+    <label>Employee Job :</label>
+    <input name="Job" type="text" value="@Model.Job"/>
+    <hr/>
+    <label>Employee Salary :</label>
+    <input name="Salary" type="text" value="@Model.Salary"/>
+    <hr/>
+    <label>Employee Dept No :</label>
+    <input name="DeptNo" type="text" value="@Model.DeptNo"/>
+    <input type="submit" value="Confirm" />
+</form>
+@{
+    if (ViewBag.RequestType == "POST")
+    {
+        <h4>@ViewBag.ErrorMessage</h4>   
+    }
+}
+
+<a href="/Employee/Index">Back to Home Page</a>

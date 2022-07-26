@@ -1,0 +1,19 @@
+﻿@using WebApplication4.Models
+@model Employee
+
+<h4>Do you want to remove this record permanently? </h4>
+
+<div>
+    Employee No : @Model.EmpNo<br/>
+    Employee Name : @Model.Ename<br/>
+    Employee Job : @Model.Job<br/>
+    Employee Salary: @Model.Salary<br/>
+    Employee Dept No : @Model.DeptNo<br/>
+
+</div>
+<form action="/Employee/Delete" method="post">
+    <input name="EmpNo" type="hidden" value="@Model.EmpNo" />
+    <input type="submit" value="Delete" />
+</form>
+<hr/>
+<a href="/Employee/Index">Back to Home Page</a>
