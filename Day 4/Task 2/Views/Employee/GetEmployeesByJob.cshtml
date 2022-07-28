@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewData["Title"] = "GetEmployeesByJob";
+}
+<form asp-action="GetEmployeesByJob">
+    <label> Enter Job Designation :</label>
+    <input type="text" name="Job" /><br/>
+    <input type="submit" value="Search"/>
+</form>
+
+@{
+    <table>
+            <tr>
+                <th>Ename</th>
+                <th>Job</th>
+                <th>Salary</th>
+                <th>Dept No</th>
+            </tr>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Ename</td>
+                </tr>   
+                <tr>
+                    <td>@item.Job</td>
+                </tr>
+                <tr>
+                    <td>@item.Salary</td>
+                </tr>
+                <tr>
+                    <td>@item.DeptNo</td>
+                </tr>
+            }
+    </table>
+}
